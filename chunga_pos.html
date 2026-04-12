@@ -539,7 +539,7 @@ function enviarWhatsApp(key){
   let waNum=pedido.wa||pedido.waRaw;
   if(!waNum){toast("Cliente sin WhatsApp");return;}
   waNum=normalizeWA(waNum);
-  const mensaje=encodeURIComponent(`¡Hola ${pedido.cliente}! 🌭 Tu pedido #${pedido.num} está listo para recoger. ¡Gracias por elegirnos! Si tienes un momento, nos ayudaría mucho una reseña: https://www.google.com/maps/place/LA+PERRADA+DE+CHUNGA/@7.1342886,-73.1210015,17z`);
+  const mensaje=encodeURIComponent(`¡Hola ${pedido.cliente}! 🌭 Tu pedido #${pedido.num} está listo para recoger. ¡Gracias por elegirnos! Si tienes un momento, nos ayudaría mucho una reseña: https://maps.app.goo.gl/WoiwXPPF2YbLyvhy6?g_st=ac`);
   window.open(`https://wa.me/${waNum}?text=${mensaje}`,'_blank');
   setTimeout(()=>cambiarEstado(key,'entregado'),500);
 }
